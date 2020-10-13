@@ -24,12 +24,14 @@ for (var a= 0; a < lowercase.length; a++){
   combination.push(lowercase[a]);
 }
 
-console.log(combination)
+var randompassword = []
 
 for (var b= 0; b < 10; b++){
   var passwordcombo = Math.floor(Math.random()*combination.length)
-  console.log(combination[passwordcombo])
+  randompassword.push(combination[passwordcombo])
 }
+
+console.log(randompassword)
 
 var generateBtn = document.querySelector("#generate");
 

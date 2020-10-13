@@ -33,7 +33,9 @@ console.log(combination)
 
 var randompassword = []
 
-for (var b= 0; b < 10; b++){
+var length = prompt("Choose a password length between 8 and 36 characters:")
+
+for (var b= 0; b < parseInt(length); b++){
   var passwordcombo = Math.floor(Math.random()*combination.length)
   randompassword.push(combination[passwordcombo])
 }

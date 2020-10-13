@@ -9,20 +9,27 @@ for (var i= 0; i < uppercase.length; i++){
   lowercase.push(uppercase[i].toLowerCase());
 }
 
+var selectUpper = confirm("Do you want your password to contain uppercase letters?")
+var selectLower = confirm("Do you want your password to contain lowercase letters?")
+var selectNumber = confirm("Do you want your password to contain numbers?")
+var selectSpecial = confirm("Do you want your password to contain special characters?")
+
 var combination = []
 
-for (var x= 0; x < uppercase.length; x++){
+if (selectUpper) { for (var x= 0; x < uppercase.length; x++){
   combination.push(uppercase[x]);
-}
-for (var y= 0; y < number.length; y++){
-  combination.push(number[y]);
-}
-for (var z= 0; z < special.length; z++){
-  combination.push(special[z]);
-}
-for (var a= 0; a < lowercase.length; a++){
+}}
+if (selectLower) {for (var a= 0; a < lowercase.length; a++){
   combination.push(lowercase[a]);
-}
+}}
+if (selectNumber) {for (var y= 0; y < number.length; y++){
+  combination.push(number[y]);
+}}
+if (selectSpecial) {for (var z= 0; z < special.length; z++){
+  combination.push(special[z]);
+}}
+
+console.log(combination)
 
 var randompassword = []
 
@@ -32,6 +39,8 @@ for (var b= 0; b < 10; b++){
 }
 
 console.log(randompassword)
+
+
 
 var generateBtn = document.querySelector("#generate");
 

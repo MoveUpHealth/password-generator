@@ -26,7 +26,10 @@ for (var a= 0; a < lowercase.length; a++){
 
 console.log(combination)
 
-
+for (var b= 0; b < 10; b++){
+  var passwordcombo = Math.floor(Math.random()*combination.length)
+  console.log(combination[passwordcombo])
+}
 
 var generateBtn = document.querySelector("#generate");
 
@@ -36,6 +39,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+  console.log(password)
 
 }
 

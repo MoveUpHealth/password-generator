@@ -4,17 +4,20 @@ var uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'
 var number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 var special = [' ', '~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', ',', '-', '.', '/', ':', ';', '<', '?', '[', ']', '\'', '_', '|', '{', '}', '"', "'"]
 var lowercase = []
+var combination = []
+var randompassword = []
 
 for (var i= 0; i < uppercase.length; i++){
   lowercase.push(uppercase[i].toLowerCase());
 }
 
+function generatePassword(){
 var selectUpper = confirm("Do you want your password to contain uppercase letters?")
 var selectLower = confirm("Do you want your password to contain lowercase letters?")
 var selectNumber = confirm("Do you want your password to contain numbers?")
 var selectSpecial = confirm("Do you want your password to contain special characters?")
 
-var combination = []
+
 
 if (selectUpper) { for (var x= 0; x < uppercase.length; x++){
   combination.push(uppercase[x]);
@@ -31,13 +34,13 @@ if (selectSpecial) {for (var z= 0; z < special.length; z++){
 
 console.log(combination)
 
-var randompassword = []
+
 
 
 
 function lengthFunction(){ do{
   var length = prompt("Choose a password length between 8 and 36 characters:")
-  if ((parseInt(length) > 8) && (parseInt(length) < 36)){
+  if ((parseInt(length) >= 8) && (parseInt(length) <= 36)){
     return length
   
   } else {
@@ -57,7 +60,7 @@ for (var b= 0; b < parseInt(passwordLength); b++){
 }
 
 console.log(randompassword)
-
+}
 
 
 var generateBtn = document.querySelector("#generate");
@@ -67,8 +70,9 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = randompassword.join('');
   console.log(password)
+  console.log(randompassword)
 
 }
 
